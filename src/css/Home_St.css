@@ -1,0 +1,496 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --color-primary: #5955b3;
+  --color-primary-dark: #4d49a1;
+  --color-grey-dark-1:#333;
+  --color-grey-dark-2:#707070;
+}
+html{
+  font-size: 62.5%;
+}
+body {
+  font-family: "Arial", sans-serif;
+  background-color: var(--color-primary);
+  color: var(--color-grey-dark-1);
+  min-width: 128rem;
+  min-height: 72rem;
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+  overflow: hidden;
+}
+
+
+.container {
+  background-color: var(--color-primary);
+  display: flex;
+  height: 90vh;
+  min-width: 100%;
+  max-width: 128rem;
+  min-height: 70rem;
+}
+/* Sidebar */
+.sidebar {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 1.5rem;
+  width: 17rem;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+.sidebar h2 {
+  margin-bottom: 5rem;
+  font-size: 3.5rem;
+  font-style: italic;
+}
+
+.img-logo {
+  width: 3.5rem;
+  margin-bottom: -0.7rem;
+}
+
+.sidebar ul {
+  list-style-type: none;
+}
+
+.sidebar ul li {
+  /* margin: 3.5rem 0; */
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 15.7rem;
+  height: 7.5rem;
+  border-top-left-radius: 2.5rem;
+  border-bottom-left-radius: 2.5rem;
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+.sidebar ul li a:link,
+.sidebar ul li a:visited {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-decoration: none;
+}
+.sidebar .active-button a:link,
+.sidebar .active-button a:visited {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+.img-logoOut {
+  /* margin-top: -12rem; */
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+.Sli {
+  color: white;
+  cursor: pointer;
+  margin: 1rem 0;
+  font-size: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.active-button {
+  background-color: white;
+  color: var(--color-primary);
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+/* ======================================================= */
+
+/* Main Content */
+.main-content {
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 5rem 0px 0px 5rem;
+  box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Search Bar */
+/* .search input {
+  margin: 0.5rem;
+  width: 4.1rem;
+  height: 5.5rem;
+  border-radius: 3.5rem;
+  border: none;
+  box-shadow: 2px 1px 20px 1px var(--color-primary);
+}
+
+.search svg {
+  position: relative;
+  left: -8.5rem;
+  top: 3rem;
+} */
+
+.welcome {
+  margin: 1rem;
+  width: 90%;
+  height: 25%;
+  border-radius: 5rem;
+  border: none;
+  box-shadow: 2px 1px 20px 1px var(--color-primary);
+  padding-left: 20rem;
+  padding-top: 1.7rem;
+}
+
+.welcome img {
+  width: 35%;
+  position: relative;
+  left: 63%;
+  top: -11.5rem;
+}
+.welcome .goodMorning {
+  font-size: 2.5rem;
+  font-style: italic;
+  font-weight: bold;
+  color: var(--color-primary);
+  align-content: center;
+  margin-top: revert;
+}
+.welcome .niceDay {
+  font-size: 2.5rem;
+  color: #707070;
+  align-content: center;
+}
+.Wdeadline {
+  width: 100%;
+  padding: 1.5rem;
+}
+.Wdeadline p {
+  font-size: 2.6rem;
+  font-weight: bold;
+  color: var(--color-primary);
+  align-content: center;
+  margin-bottom: 2%;
+}
+.Wdeadline .deadlineBoxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 10px; */
+}
+
+.Wdeadline .deadlineBoxes .box {
+  width: 18.5rem;
+  height: 16rem;
+  border-radius: 2.9rem;
+  background-color: var(--color-primary);
+  border: none;
+  box-shadow: 2px 1px 2.5rem 1px var(--color-primary);
+  transition: all 0.5s ease;
+}
+.box:hover {
+  transform: scale(1.1);
+  z-index: 1;
+  transition: all 0.5s ease;
+}
+.Wdeadline .deadlineBoxes .box .upper {
+  height: 5.5rem;
+  /* width: 18.5rem; */
+  width: 100%;
+  border-radius: 2.9rem 2rem 0rem 0rem;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--color-primary);
+  align-content: center;
+}
+
+.Wdeadline .deadlineBoxes .box .lower {
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  align-content: center;
+}
+.imgCard {
+  width: 18%;
+  margin-top: 1rem;
+  margin-left: 70%;
+}
+.exam-countdown {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem;
+}
+
+.countdown_boxF {
+  background-color: white;
+  border: 3px solid #5a47ff;
+  border-radius: 0rem 2.5rem 2.5rem 0rem;
+  padding: 2.5rem;
+  width: 50%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0.4rem 1.5rem rgba(0, 0, 0, 0.4);
+  transition: countdown_boxF 1s linear; /* Transition for smoothness */
+}
+.countdown_boxM {
+  background-color: white;
+  border: 3px solid #5a47ff;
+  border-radius: 2.5rem 0rem 0rem 2.5rem;
+  padding: 2.5rem;
+  width: 50%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0.4rem 1.5rem rgba(0, 0, 0, 0.4);
+  transition: countdown_boxM 1s linear; /* Transition for smoothness */
+}
+
+.countdown-box h4 {
+  color: #5a47ff;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.timer {
+  display: flex;
+  align-items: center;
+}
+
+.timer-value {
+  font-size: 3.5rem;
+  border-radius: 0.4rem;
+  padding: 0.5rem 3.8rem;
+  margin: 0 0.5rem;
+}
+
+.timer-label {
+  font-size: 2.5rem;
+  color: gray;
+  margin-left: -4rem;
+}
+
+.refresh-icon {
+  position: absolute;
+  bottom: 0.9rem;
+  right: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 2rem;
+}
+
+.icon-number {
+  color: #5a47ff;
+  font-size: 1.4rem;
+  font-weight: bold;
+  width: 100%;
+}
+
+/* ==================================================== */
+
+/* User Profile Section */
+.img {
+  display: flex;
+  border-radius: 120%;
+  margin-left: 5rem;
+  margin-top: -8rem;
+  margin-bottom: 0.5rem;
+  width: 10rem;
+  border: 5px solid #0710e9;
+  border-bottom-color: #5d2dbd;
+  border-top-color: #5f2180;
+}
+
+.user-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #ffffff;
+  padding: 3.5rem;
+  border-radius: 0rem 5rem 5rem 0rem;
+  box-shadow: 0 0rem 3rem rgba(0, 0, 0, 0.3);
+  min-width: 30rem;
+  margin-right: 2rem;
+}
+
+.user-info {
+  box-shadow: 0 1rem 2.3rem rgba(0, 0, 0, 0.3);
+  width: 100%;
+  padding: 10%;
+  border-radius: 2rem;
+  margin-top: 6rem;
+}
+.lines-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -1.5rem;
+  margin-bottom: -1.5rem;
+}
+
+.line {
+  height: 0.2rem;
+  background-color: #b3b3b3;
+  margin: 0.2rem 0;
+  border-radius: 0.5rem;
+}
+
+.line1 {
+  width: 15rem;
+}
+
+.line2 {
+  width: 20rem;
+}
+
+.line3 {
+  width: 10rem;
+}
+
+.user-profile h3 {
+  font-size: medium;
+  font-weight: bold;
+  text-align: center;
+  color: var(--color-primary);
+}
+
+.label {
+  color: var(--color-primary);
+  font-weight: bold;
+  font-size: 1.6rem;
+
+}
+
+.value {
+  font-size: 1.6rem;
+  color: #707070;
+}
+
+/* ====================================== */
+
+/* Calendar Section */
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  border-radius: 2rem;
+  width: 100%;
+  margin: 2rem auto;
+}
+
+.calendar-header {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: #5a47ff;
+  margin-bottom: 1rem;
+  margin-inline-end: auto;
+}
+
+.calendar-days {
+  display: flex;
+  justify-content: space-between;
+  width: 130%;
+  background-color: #ffffff;
+}
+.calendar-days .day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.4rem;
+  color: #5a47ff;
+  text-shadow: 2px 3px 5px rgba(30, 61, 200, 0.9);
+}
+
+.calendar-days .day span {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  text-shadow: 0rem 0.1rem 0.9rem rgba(80, 91, 120, 1.5);
+}
+
+.calendar-days .active {
+  background-color: #5a47ff;
+  color: #ffffff;
+  border-radius: 50%;
+  padding: 1rem;
+  margin-top: -0.9rem;
+}
+
+.today-schedule {
+  margin-top: 5rem;
+  background-color: #ffffff;
+  padding: 0.9rem;
+  border-radius: 4rem;
+  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.2);
+  width: 140%;
+}
+
+.today-schedule h4 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #5a47ff;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  text-align: center;
+}
+
+.schedule-item {
+  border-radius: 1rem;
+}
+
+.schedule-item p {
+  font-size: 1.4rem;
+  color: #5a47ff;
+}
+@media screen and (max-width:87.5em){
+  html{
+    font-size: 55%;
+  }
+.Wdeadline .deadlineBoxes .box {
+  width: 15.5rem;
+  height: 15rem;
+}
+.Wdeadline .deadlineBoxes .box .upper {
+  /* width: ; */
+  font-size: 2.4rem;
+}
+.Wdeadline .deadlineBoxes .box .lower {
+  font-size: 2rem;
+}
+}
+@media screen and (max-width:75em){
+html{
+  font-size: 50%;
+}
+.Wdeadline .deadlineBoxes .box {
+  width: 14.5rem;
+}
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="src/css/Home_St.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="logo">
+        <h2><img src="src/images/logo.png" class="img-logo" />EDU</h2>
+      </div>
+          <ul>
+            <li id="home" class="Sli homeli active-button"> <a class="nav__link" href="home.html">Home</a></li>
+            <li id="courses" class="Sli couli" ><a class="nav__link" href="courses.html">Courses</a></li>
+            <li id="calendar" class="Sli calli"><a class="nav__link" href="calandar.html">Calendar</a></li>
+            <li id="chats" class="Sli chatli">Chats</li>
+            <li id="logout" class="Sli">Log out</li>
+            <li class="Sli"><img src="src/images/icons8-log-out-64.png" class="img-logoOut" /></li>      
+      </ul>
+            
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <span id="hoverElement" class="hover clickHome "></span>
+      <div class="welcome">
+        <div class="left">
+          <p class="goodMorning">Welcome <span> Sa3doka</span></p>
+          <p class="niceDay">Have a nice day !</p>
+        </div>
+        <div class="right">
+          <img src="src/images/1.png" alt="User Photo" />
+
+
+</div>
+      </div>
+      <div class="Wdeadline">
+        <p>Weakly Deadline :</p>
+        <div class="deadlineBoxes">
+          <div class="box">
+            <div class="upper">MOT</div>
+            <div class="lower">Assignment</div>
+            <img class="imgCard" src="src/images/icons8-clock-60.png" />
+          </div>
+          <div class="box">
+            <div class="upper">ITI</div>
+            <div class="lower">Assignment</div>
+            <img class="imgCard" src="src/images/icons8-clock-60.png" />
+
+          </div>
+          <div class="box">
+            <div class="upper">SAD</div>
+            <div class="lower">Presentation</div>
+            <img class="imgCard" src="src/images/icons8-clock-60.png" />
+
+          </div>
+          <div class="box">
+            <div class="upper">Database</div>
+            <div class="lower">Assignment</div>
+            <img class="imgCard" src="src/images/icons8-clock-60.png" />
+
+          </div>
+        </div>
+      </div>
+      <div class="exam-countdown">
+        <div class="countdown_boxM">
+          <h4>Mid Term Exams</h4>
+          <div class="timer">
+            <span class="timer-value" id="days">35</span>
+            <span class="timer-label">D</span>
+          </div>
+          <div class="refresh-icon">
+            <img src="src/images/Refresh.png" class="icon-number">
+          </div>
+        </div>
+        <div class="countdown_boxF">
+          <h4>Final Exams</h4>
+          <div class="timer">
+            <span class="timer-value" id="months">3</span>
+            <span class="timer-label">M</span>
+            <span class="timer-value" id="final-days">15</span>
+            <span class="timer-label">D</span>
+          </div>
+          <div class="refresh-icon">
+            <img src="src/images/Refresh.png" class="icon-number">
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+    <!-- Right Sidebar -->
+    <div class="user-profile">
+      <div class="user-info">
+        <img src="src/images/userSaad.jpg" class="img" /><br>
+        <h3>Alexandria University</h3><br>
+        <div class="lines-container">
+          <div class="line line1"></div>
+          <div class="line line2"></div>
+          <div class="line line3"></div>
+        </div><br>
+        <div class="user-p">
+          <p><span class="label">Name:</span> <span class="value">Sa3doka</span></p>
+          <p><span class="label">ID:</span> <span class="value">30101140992250</span></p>
+          <p><span class="label">GPA:</span> <span class="value">0000</span></p>
+          <p><span class="label">DEP:</span> <span class="value">MIS</span></p>
+          <p><span class="label">Class:</span> <span class="value">4</span></p>
+        </div>
+
+      </div>
+
+<div class="calendar-container">
+        <div class="calendar-header">
+          <h2>OCT</h2>
+        </div>
+        <div class="calendar-days">
+          <div class="day">Sat <span>4</span></div>
+          <div class="day">Sun <span>5</span></div>
+          <div class="day">Mon <span>6</span></div>
+          <div class="day active">Tue <span>7</span></div>
+          <div class="day">Wed <span>8</span></div>
+          <div class="day">Thu <span>9</span></div>
+          <div class="day">Fri <span>10</span></div>
+        </div>
+        <div class="today-schedule">
+          <h4>Today’s Schedule</h4>
+          <div class="schedule-grid">
+            <div class="schedule-item">
+              <p>Programming Lecture</p>
+              <span>At 8 am</span>
+            </div>
+            <div class="schedule-item">
+              <p>MOT Section</p>
+              <span>At 1 pm</span>
+            </div>
+            <div class="schedule-item">
+              <p>DBMS Section</p>
+              <span>At 2 pm</span>
+            </div>
+            <div class="schedule-item">
+              <p>SA Lecture</p>
+              <span>At 5 pm</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+</div>
+  </div>
+  </div>
+  </div>
+  <script>
+const buttons = document.querySelectorAll("#home, #calendar, #courses, #chats");
+const hoverElement = document.getElementById("hoverElement");
+
+function resetButtonColors() {
+  buttons.forEach((button) => {
+    button.classList.remove("active-button");
+  });
+}
+
+buttons.forEach((button) => {
+  const positionMap = {
+    home: "109px",
+    calendar: "202px",
+    courses: "297px",
+    chats: "389px",
+  };
+
+  button.addEventListener("click", function () {
+    resetButtonColors();
+
+    // تغيير لون النص عند الضغط
+    this.classList.add("active-button");
+
+    // تحريك الـ hoverElement ليتناسب مع مكان الـ section الأوسط
+    hoverElement.style.top = positionMap[this.id];
+  });
+});
+
+  </script>
+</body>
+
+</html>

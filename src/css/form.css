@@ -21,6 +21,9 @@ body {
   align-items: center;
   height: 100vh;
 }
+.authentcation-container {
+  padding-top: 4rem;
+}
 
 .container {
   display: flex;

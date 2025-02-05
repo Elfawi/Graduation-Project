@@ -31,6 +31,7 @@ body {
   min-width: 100%;
   max-width: 128rem;
   min-height: 70rem;
+  padding-bottom: 7rem;
 }
 /* Sidebar */
 .sidebar {
@@ -339,7 +340,7 @@ body {
   width: 100%;
   padding: 10%;
   border-radius: 2rem;
-  margin-top: 6rem;
+  margin-top: 4rem;
 }
 .lines-container {
   display: flex;
@@ -471,6 +472,9 @@ body {
 @media screen and (max-width: 87.5em) {
   html {
     font-size: 55%;
+  }
+  .today-schedule {
+    margin-top: 3rem;
   }
   .Wdeadline .deadlineBoxes .box {
     width: 18.5rem;

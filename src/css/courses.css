@@ -30,6 +30,7 @@ body {
   min-width: 100%;
   max-width: 128rem;
   min-height: 70rem;
+  padding-bottom: 7rem;
 }
 /* Sidebar */
 .sidebar {

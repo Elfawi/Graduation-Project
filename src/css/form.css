@@ -9,6 +9,7 @@
   --color-primary-dark: #4d49a1;
   --color-grey-dark-1: #333;
   --color-grey-dark-2: #707070;
+  --color-danger: #ff3333;
 }
 html {
   font-size: 62.5%;
@@ -127,12 +128,21 @@ input {
   transition: border-color 0.3s ease-in-out;
 }
 
+/*///////////////////////// Css Valdition //////////////////////*/
 input:focus {
   outline: none;
-  border: 3px solid var(--color-primary);
+  /* border: 3px solid var(--color-primary); */
   /* border-color: var(--color-primary); Change color on focus */
 }
-
+input::placeholder {
+  color: var(--color-grey-dark-2);
+}
+input:valid {
+  border-bottom: 3px solid var(--color-primary);
+}
+input:focus:not(:valid) {
+  border-bottom: 3px solid var(--color-danger);
+}
 .sign-in-btn {
   padding: 2.5rem;
   background-color: var(--color-primary);
@@ -209,16 +219,14 @@ input:focus {
   .form-section {
     width: 100%;
   }
-  .image-section {
-    padding-bottom: 2rem;
-  }
   .container {
     flex-direction: column;
-    margin: 0;
   }
   .image-section {
     width: 100%;
     order: -1;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
   }
   input {
     width: 100%;

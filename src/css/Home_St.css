@@ -175,7 +175,7 @@ body {
   width: 100%;
   padding: 1.5rem;
 }
-.Wdeadline p {
+.Wdeadline .deadline-title {
   font-size: 2.6rem;
   font-weight: bold;
   color: var(--color-primary);
@@ -229,10 +229,30 @@ body {
   color: var(--color-grey-light-1);
   align-content: center;
 }
+.box__time-container {
+  background-color: orangered;
+  margin: 1rem auto;
+  text-align: center;
+  padding: 0.4rem;
+  width: 75%;
+  font-size: 1.6rem;
+  background: var(--color-primary-dark);
+  color: var(--color-grey-light-1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1.5rem;
+  box-shadow: 0.6rem 0.6rem 2rem rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10rem);
+}
+.box__time {
+  font-weight: bold;
+  width: 60%;
+  text-transform: uppercase;
+}
 .imgCard {
-  width: 18%;
-  margin-top: 1rem;
-  margin-left: 70%;
+  width: 25%;
+  /* margin-left: 70%; */
 }
 .exam-countdown {
   display: flex;

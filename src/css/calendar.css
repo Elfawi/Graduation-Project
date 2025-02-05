@@ -6,10 +6,10 @@
 :root {
   --color-primary: #5955b3;
   --color-primary-dark: #4d49a1;
-  --color-grey-dark-1:#333;
-  --color-grey-dark-2:#707070;
+  --color-grey-dark-1: #333;
+  --color-grey-dark-2: #707070;
 }
-html{
+html {
   font-size: 62.5%;
 }
 body {
@@ -22,7 +22,6 @@ body {
   padding-bottom: 5rem;
   overflow: hidden;
 }
-
 
 .container {
   background-color: var(--color-primary);
@@ -132,27 +131,13 @@ body {
   transform: scale(1.1);
   transition: all 0.3s ease;
 }
-@media screen and (max-width:87.5em){
-  html{
+@media screen and (max-width: 87.5em) {
+  html {
     font-size: 55%;
   }
-.Wdeadline .deadlineBoxes .box {
-  width: 15.5rem;
-  height: 15rem;
 }
-.Wdeadline .deadlineBoxes .box .upper {
-  /* width: ; */
-  font-size: 2.4rem;
-}
-.Wdeadline .deadlineBoxes .box .lower {
-  font-size: 2rem;
-}
-}
-@media screen and (max-width:75em){
-html{
-  font-size: 50%;
-}
-.Wdeadline .deadlineBoxes .box {
-  width: 14.5rem;
-}
+@media screen and (max-width: 75em) {
+  html {
+    font-size: 50%;
+  }
 }

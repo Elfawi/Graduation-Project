@@ -7,10 +7,10 @@
 :root {
   --color-primary: #5955b3;
   --color-primary-dark: #4d49a1;
-  --color-grey-dark-1:#333;
-  --color-grey-dark-2:#707070;
+  --color-grey-dark-1: #333;
+  --color-grey-dark-2: #707070;
 }
-html{
+html {
   font-size: 62.5%;
 }
 body {
@@ -20,7 +20,6 @@ body {
   align-items: center;
   height: 100vh;
 }
-
 
 .container {
   display: flex;
@@ -90,7 +89,7 @@ input {
   padding: 2.5rem;
   margin-bottom: 2rem;
   border-radius: 1.2rem; /* Updated for rounded corners */
-  box-shadow: 0rem .4rem 1rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0rem 0.4rem 1rem rgba(0, 0, 0, 0.3);
   border: 3px solid transparent;
   font-size: 1.6rem;
   background-color: #f4f4fe;
@@ -183,49 +182,48 @@ input:focus {
 .image-section.slide-right {
   transform: translateX(0%);
 }
-.form__label{
+.form__label {
   font-size: 1.8rem;
 }
-.form__title{
+.form__title {
   font-weight: bold;
   color: #333;
   margin-bottom: 1rem;
   font-size: 2.4rem;
 }
-.form__subtitle{
+.form__subtitle {
   font-size: 1.6rem;
 }
-@media screen and (max-width:87.5em){
-  html{
+@media screen and (max-width: 87.5em) {
+  html {
     font-size: 55%;
   }
-  .container{
+  .container {
     margin: 0;
   }
-    
+}
+@media screen and (max-width: 37.5em) {
+  html {
+    font-size: 50%;
   }
-  @media screen and (max-width:37.5em){
-    html{
-      font-size: 50%;
-    }
-    .form-section {
-      width: 100%;
-    }
-    .image-section{
-      padding-bottom: 2rem;
-    }
-    .container {
-  flex-direction: column;
-  margin: 0;
-    }
-    .image-section {
-      width: 100%;
-      order: -1;
-    }
-    input {
-      width: 100%;
-    }
-    .sign-in-btn {
-      width: 100%;
-    }
-    }
+  .form-section {
+    width: 100%;
+  }
+  .image-section {
+    padding-bottom: 2rem;
+  }
+  .container {
+    flex-direction: column;
+    margin: 0;
+  }
+  .image-section {
+    width: 100%;
+    order: -1;
+  }
+  input {
+    width: 100%;
+  }
+  .sign-in-btn {
+    width: 100%;
+  }
+}

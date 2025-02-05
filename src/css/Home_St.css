@@ -464,7 +464,6 @@ body {
 .schedule-item {
   border-radius: 1rem;
 }
-
 .schedule-item p {
   font-size: 1.4rem;
   color: var(--color-primary-dark);
@@ -474,11 +473,10 @@ body {
     font-size: 55%;
   }
   .Wdeadline .deadlineBoxes .box {
-    width: 15.5rem;
+    width: 18.5rem;
     height: 15rem;
   }
   .Wdeadline .deadlineBoxes .box .upper {
-    /* width: ; */
     font-size: 2.4rem;
   }
   .Wdeadline .deadlineBoxes .box .lower {
@@ -490,6 +488,6 @@ body {
     font-size: 50%;
   }
   .Wdeadline .deadlineBoxes .box {
-    width: 14.5rem;
+    width: 15.5rem;
   }
 }

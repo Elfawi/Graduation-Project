@@ -10,6 +10,14 @@
   --color-grey-dark-2: #707070;
   --color-grey-light-1: #f7f7f7;
   --color-grey-light-2: #eae9e9;
+  --color-danger: #ff3333;
+  --fs-1: 4.2rem;
+  --fs-2: 3.4rem;
+  --fs-3: 2.8rem;
+  --fs-4: 2rem;
+  --fs-5: 1.8rem;
+  --fs-6: 1.6rem;
+  --fs-7: 1.4rem;
 }
 html {
   font-size: 62.5%;
@@ -23,7 +31,7 @@ body {
   min-height: 72rem;
   padding-top: 2rem;
   padding-bottom: 5rem;
-  font-size: 1.6rem;
+  font-size: var(--fs-6);
   overflow: hidden;
 }
 
@@ -50,7 +58,8 @@ body {
 
 .sidebar h2 {
   margin-bottom: 5rem;
-  font-size: 3.5rem;
+  /* font-size: 3.5rem; */
+  font-size: var(--fs-2);
   font-style: italic;
 }
 
@@ -101,7 +110,8 @@ body {
   color: white;
   cursor: pointer;
   margin: 1rem 0;
-  font-size: 2rem;
+  /* font-size: 2rem; */
+  font-size: var(--fs-4);
   text-align: center;
   transition: all 0.3s ease;
 }
@@ -171,7 +181,8 @@ body {
 .event-modal {
   background-color: var(--color-primary);
   color: var(--color-grey-light-1);
-  font-size: 2rem;
+  /* font-size: 2rem; */
+  font-size: var(--fs-4);
   position: absolute;
   padding: 4rem;
   /* width: 80%; */
@@ -201,15 +212,19 @@ body {
   margin-left: 7rem;
   margin-bottom: 2rem;
 }
+.group-input {
+  width: 90%;
+}
 input {
   padding: 1.5rem;
   font-family: inherit;
   border-radius: 1.2rem; /* Updated for rounded corners */
   box-shadow: 0rem 0.4rem 1rem rgba(0, 0, 0, 0.3);
   border: 3px solid transparent;
-  font-size: 1.6rem;
+  /* font-size: 1.6rem; */
+  font-size: var(--fs-6);
   background-color: var(--color-grey-light-1);
-  width: 90%;
+  width: 100%;
   transition: all 0.3s ease-in-out;
 }
 input:focus {
@@ -232,7 +247,8 @@ input:focus {
   border-top-right-radius: 0.3rem;
   cursor: pointer;
   box-shadow: 0px 1rem 1.7rem rgba(10, 8, 10, 0.2);
-  font-size: 1.8rem;
+  /* font-size: 1.8rem; */
+  font-size: var(--fs-5);
   width: 90%;
   transition: all 0.3s ease-in-out;
 }
@@ -260,6 +276,10 @@ input::placeholder {
 }
 .event-description:focus {
   border: 3px solid var(--color-grey-light-2);
+}
+.event-modal-title {
+  /* font-size: 3.2rem; */
+  font-size: var(--fs-2);
 }
 .overlay {
   background: rgba(0, 0, 0, 0.7);

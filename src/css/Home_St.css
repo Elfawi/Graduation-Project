@@ -10,6 +10,14 @@
   --color-grey-light-2: #eae9e9;
   --color-grey-dark-1: #333;
   --color-grey-dark-2: #707070;
+  --color-danger: #ff3333;
+  --fs-1: 4.2rem;
+  --fs-2: 3.4rem;
+  --fs-3: 2.8rem;
+  --fs-4: 2rem;
+  --fs-5: 1.8rem;
+  --fs-6: 1.6rem;
+  --fs-7: 1.4rem;
 }
 html {
   font-size: 62.5%;

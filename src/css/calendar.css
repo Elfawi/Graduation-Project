@@ -6,6 +6,7 @@
 :root {
   --color-primary: #5b57b3;
   --color-primary-dark: #4d49a1;
+  --color-primary-light: #5a47ff;
   --color-grey-dark-1: #333;
   --color-grey-dark-2: #707070;
   --color-grey-light-1: #f7f7f7;
@@ -280,6 +281,17 @@ input::placeholder {
 .event-modal-title {
   /* font-size: 3.2rem; */
   font-size: var(--fs-2);
+}
+.btn-close-modal {
+  font-size: 6rem;
+  position: absolute;
+  color: var(--color-grey-light-1);
+  right: 5rem;
+  top: 3rem;
+  cursor: pointer;
+}
+.btn-close-modal:hover {
+  color: var(--color-grey-light-2);
 }
 .overlay {
   background: rgba(0, 0, 0, 0.7);

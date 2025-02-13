@@ -12,6 +12,8 @@ const event = {
 };
 const eventModal = document.querySelector(".event-modal");
 const overlay = document.querySelector(".overlay");
+const btnCloseModal = document.querySelector(".btn-close-modal");
+btnCloseModal.addEventListener("click", hideEventModal);
 document.addEventListener("DOMContentLoaded", function () {
   const calendarEl = document.getElementById("calendar");
   const calendar = new FullCalendar.Calendar(calendarEl, {

@@ -22,7 +22,7 @@
           <li id="courses" class="Sli couli">
             <a href="courses.html">Courses</a>
           </li>
-          <li id="calendar" class="Sli calli active-button">
+          <li id="calen" class="Sli calli active-button">
             <a href="calandar.html">Calendar</a>
           </li>
           <li id="chats" class="Sli chatli">Chats</li>
@@ -35,7 +35,41 @@
 
       <!-- Main Content -->
       <div class="main-content">
-         <h1>Calandar</h1>
+        <section id="calendar" class="calendar"></section>
+        <div class="event-modal modal-hidden">
+          <label class="event-date-label" for="event-title">Event title</label>
+          <input type="text" id="event-title" placeholder="Event title" />
+          <div class="date-container">
+            <div class="group-input">
+              <label class="event-date-label" for="event-date"
+                >Event start date</label
+              >
+              <input type="date" id="event-start-date" />
+            </div>
+            <div class="group-input">
+              <label class="event-date-label" for="event-date"
+                >Event end date</label
+              >
+              <input type="date" id="event-end-date" />
+            </div>
+          </div>
+          <div class="description">
+            <label class="event-date-label" for="event-description"
+              >Description</label
+            >
+            <textarea
+              class="event-description"
+              name="eventDescription"
+              id="event-description"
+              cols="100"
+            ></textarea>
+          </div>
+          <button id="save-event">Save</button>
+        </div>
+      </div>
     </div>
+    <div class="overlay"></div>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+    <script src="src/js/calendar.js"></script>
   </body>
 </html>

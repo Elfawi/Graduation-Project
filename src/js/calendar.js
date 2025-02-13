@@ -15,11 +15,32 @@ const overlay = document.querySelector(".overlay");
 document.addEventListener("DOMContentLoaded", function () {
   const calendarEl = document.getElementById("calendar");
   const calendar = new FullCalendar.Calendar(calendarEl, {
+    selectable: true,
+    selectableHelper: true,
+    select: function () {
+      showEventModal();
+    },
+    dayRender: function (date, cell) {
+      cell.css("background", "red");
+      console.log(cell);
+      console.log(date);
+    },
     headerToolbar: {
-      left: "prev,next today",
+      right: "prev,today,next",
       center: "title",
-      right: "dayGridMonth,timeGridWeek,timeGridDay",
+      left: "dayGridMonth,timeGridWeek,timeGridDay,listWeek",
+      // center: "addEventButton",
+    },
+    footerToolbar: {
+      // left: "dayGridMonth,timeGridWeek,timeGridDay,listWeek",
       center: "addEventButton",
+    },
+    buttonText: {
+      today: "Today",
+      dayGridMonth: "Month",
+      timeGridWeek: "Week",
+      timeGridDay: "Day",
+      listWeek: "List",
     },
     events: [
       {
@@ -27,11 +48,15 @@ document.addEventListener("DOMContentLoaded", function () {
         title: "my event",
         start: "2025-02-01",
         end: "2025-02-04",
+        color: "var(--color-primary)",
       },
       {
         id: "b",
         title: "my event 2",
         start: "2025-02-02",
+        end: "2025-02-05",
+        color: "var(--color-primary-dark)",
+        textColor: "var(--color-grey-light-1)",
       },
     ],
     views: {
@@ -56,9 +81,8 @@ document.addEventListener("DOMContentLoaded", function () {
           // var dateStr = prompt("Enter a date in YYYY-MM-DD format");
           // var date = new Date(dateStr + "T00:00:00"); // will be in local time
           // console.log(date.valueOf());
-          eventModal.classList.remove("modal-hidden");
-          eventModal.classList.add("modal-show");
-          overlay.style.display = "block";
+
+          showEventModal();
           //   /// isNaN IS A FUNCTION THAT RETURN TRUE IF CONVERTED TO INT SUCCESSFULY
           // if (!isNaN(date.valueOf())) {
           //   // console.log(isNaN(date.valueOf));
@@ -93,9 +117,7 @@ document.addEventListener("click", function (e) {
     e.target.closest(".event-modal") !== eventModal &&
     e.target.type !== "button"
   ) {
-    eventModal.classList.remove("modal-show");
-    eventModal.classList.add("modal-hidden");
-    overlay.style.display = "none";
+    hideEventModal();
   }
 });
 // calendar.on("dateClick", function (info) {
@@ -105,3 +127,15 @@ document.addEventListener("click", function (e) {
 // });
 ////////////////////////// Calendar Events
 // calendar.addEvent(event[prompt("enter date")]);
+
+function showEventModal() {
+  eventModal.classList.remove("modal-hidden");
+  eventModal.classList.add("modal-show");
+  overlay.style.display = "block";
+}
+
+function hideEventModal() {
+  eventModal.classList.remove("modal-show");
+  eventModal.classList.add("modal-hidden");
+  overlay.style.display = "none";
+}

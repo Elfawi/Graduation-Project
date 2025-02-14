@@ -23,6 +23,8 @@
   font-weight: 700;
   padding: 1rem;
   border-radius: 3rem;
+  gap: 1rem;
+  font-size: var(--fs-7);
 }
 .courses__title {
   padding-top: 4rem;

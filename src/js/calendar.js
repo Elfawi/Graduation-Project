@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
       dayGridMonth: "Month",
       timeGridWeek: "Week",
       timeGridDay: "Day",
-      listWeek: "List",
+      listWeek: "Events",
     },
     events: [
       {

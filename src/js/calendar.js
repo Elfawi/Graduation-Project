@@ -18,14 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const calendarEl = document.getElementById("calendar");
   const calendar = new FullCalendar.Calendar(calendarEl, {
     selectable: true,
-    selectableHelper: true,
     select: function () {
       showEventModal();
-    },
-    dayRender: function (date, cell) {
-      cell.css("background", "red");
-      console.log(cell);
-      console.log(date);
     },
     headerToolbar: {
       right: "prev,today,next",
@@ -45,20 +39,25 @@ document.addEventListener("DOMContentLoaded", function () {
       listWeek: "Events",
     },
     events: [
-      {
-        id: "a",
-        title: "my event",
-        start: "2025-02-01",
-        end: "2025-02-04",
-        color: "var(--color-primary)",
-      },
+      // {
+      //   id: "a",
+      //   title: "my event",
+      //   start: "2025-02-01",
+      //   end: "2025-02-04",
+      //   color: "var(--color-primary)",
+      // },
       {
         id: "b",
         title: "my event 2",
         start: "2025-02-02",
-        end: "2025-02-05",
+        end: "2025-02-04",
         color: "var(--color-primary-dark)",
         textColor: "var(--color-grey-light-1)",
+      },
+      {
+        title: "event3",
+        start: "2025-02-09T01:30:00",
+        allDay: false, // will make the time show
       },
     ],
     views: {

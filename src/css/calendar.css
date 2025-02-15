@@ -7,15 +7,15 @@
   box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
+  /* align-content: center; */
+  /* justify-content: center; */
+  /* align-items: center; */
   background-color: white;
   position: relative;
 }
 .calendar {
   width: 100%;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   height: 60rem;
 }
 .fc .fc-col-header-cell-cushion {
@@ -228,4 +228,10 @@ input::placeholder {
 }
 .fc-button-active {
   background-color: var(--color-primary-dark) !important;
+}
+.fc-event-main {
+  padding: 2rem;
+  color: var(--color-grey-dark-2) !important;
+  text-align: center;
+  background-color: var(--course-color-1);
 }

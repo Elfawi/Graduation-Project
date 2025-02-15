@@ -32,6 +32,10 @@
   --fs-6: 1.6rem;
   --fs-7: 1.4rem;
 }
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-grey-light-1);
+}
 html {
   font-size: 62.5%;
 }

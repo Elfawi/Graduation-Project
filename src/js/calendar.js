@@ -1,3 +1,10 @@
+// calendar.on("dateClick", function (info) {
+//   console.log("clicked on " + info.dateStr); // geting the clicked date
+//   console.log(info);
+//   // info.dayEl.querySelector(".fc-daygrid-day-events").textContent = "hello";
+// });
+////////////////////////// Calendar Events
+// calendar.addEvent(event[prompt("enter date")]);
 const event = {
   events: [
     {
@@ -10,125 +17,15 @@ const event = {
     this.events.push(event);
   },
 };
+
+const addEventButton = document.querySelector(".add__event-btn");
 const eventModal = document.querySelector(".event-modal");
+
 const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".btn-close-modal");
+overlay.style.height = document.body.clientHeight + "px";
 btnCloseModal.addEventListener("click", hideEventModal);
-document.addEventListener("DOMContentLoaded", function () {
-  const calendarEl = document.getElementById("calendar");
-  const calendar = new FullCalendar.Calendar(calendarEl, {
-    selectable: true,
-    select: function () {
-      showEventModal();
-    },
-    headerToolbar: {
-      right: "prev,today,next",
-      center: "title",
-      left: "dayGridMonth,timeGridWeek,timeGridDay,listWeek",
-      // center: "addEventButton",
-    },
-    footerToolbar: {
-      // left: "dayGridMonth,timeGridWeek,timeGridDay,listWeek",
-      center: "addEventButton",
-    },
-    buttonText: {
-      today: "Today",
-      dayGridMonth: "Month",
-      timeGridWeek: "Week",
-      timeGridDay: "Day",
-      listWeek: "Events",
-    },
-    events: [
-      // {
-      //   id: "a",
-      //   title: "my event",
-      //   start: "2025-02-01",
-      //   end: "2025-02-04",
-      //   color: "var(--color-primary)",
-      // },
-      {
-        id: "b",
-        title: "my event 2",
-        start: "2025-02-02",
-        end: "2025-02-04",
-        color: "var(--color-primary-dark)",
-        textColor: "var(--color-grey-light-1)",
-      },
-      {
-        title: "event3",
-        start: "2025-02-09T01:30:00",
-        allDay: false, // will make the time show
-      },
-    ],
-    views: {
-      dayGridMonth: {
-        // name of view
-        // titleFormat: { year: "2-digit", month: "2-digit", day: "2-digit" },
-        // other view-specific options here
-      },
-    },
-    // initialView: "dayGridMonth",
-    // eventColor: "#ff0000",
-    dateClick: function (info) {
-      // alert("a day has been clicked!");
-      console.log("clicked on " + info.dateStr); // geting the clicked date
-      // info.dayEl.style.backgroundColor = "#8b30cd";
-      // console.log(info.resource);
-    },
-    customButtons: {
-      addEventButton: {
-        text: "add event...",
-        click: function () {
-          // var dateStr = prompt("Enter a date in YYYY-MM-DD format");
-          // var date = new Date(dateStr + "T00:00:00"); // will be in local time
-          // console.log(date.valueOf());
-
-          showEventModal();
-          //   /// isNaN IS A FUNCTION THAT RETURN TRUE IF CONVERTED TO INT SUCCESSFULY
-          // if (!isNaN(date.valueOf())) {
-          //   // console.log(isNaN(date.valueOf));
-          //   // valid?
-          //   calendar.addEvent({
-          //     // title: "dynamic event",
-          //     title: prompt("Event title"),
-          //     start: date,
-          //     allDay: true,
-          //   });
-          //   calendar.addEvent(calendar.events[1]);
-          //   alert("Great. Now, update your database...");
-          // } else {
-          //   alert("Invalid date.");
-          // }
-        },
-      },
-    },
-  });
-  calendar.render();
-});
-
-document.addEventListener("click", function (e) {
-  // console.log(
-  //   // e.target.closest(".event-modal").classList.contains("event-modal")
-  // );
-  // const modal = e.target
-  //   .closest(".event-modal")
-  //   .classList.contains("modal-show");
-  // console.log(modal);
-  if (
-    e.target.closest(".event-modal") !== eventModal &&
-    e.target.type !== "button"
-  ) {
-    hideEventModal();
-  }
-});
-// calendar.on("dateClick", function (info) {
-//   console.log("clicked on " + info.dateStr); // geting the clicked date
-//   console.log(info);
-//   // info.dayEl.querySelector(".fc-daygrid-day-events").textContent = "hello";
-// });
-////////////////////////// Calendar Events
-// calendar.addEvent(event[prompt("enter date")]);
-
+addEventButton.addEventListener("click", showEventModal);
 function showEventModal() {
   eventModal.classList.remove("modal-hidden");
   eventModal.classList.add("modal-show");
@@ -140,3 +37,44 @@ function hideEventModal() {
   eventModal.classList.add("modal-hidden");
   overlay.style.display = "none";
 }
+document.addEventListener("click", function (e) {
+  // console.log(
+  //   // e.target.closest(".event-modal").classList.contains("event-modal")
+  // );
+  // const modal = e.target
+  //   .closest(".event-modal")
+  //   .classList.contains("modal-show");
+  // console.log(modal);
+  if (e.target.closest(".event-modal") !== eventModal && e.target === overlay) {
+    hideEventModal();
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Destructure the Calendar constructor
+  const { Calendar } = window.VanillaCalendarPro;
+  // Create a calendar instance and initialize it.
+  const optionsFull = {
+    dateToday: "today",
+    selectedTheme: "light",
+    selectedMonth: 2,
+    selectedYear: 2025,
+    onClickDate(self, event) {
+      console.log(event);
+      console.log(self.context.selectedDates);
+    },
+    selectionDatesMode: "multiple",
+  };
+  const calendarfull = new Calendar("#calendar", optionsFull);
+
+  calendarfull.init();
+  // calendarfull.update({
+  //   dates: true,
+  //   holidays: false,
+  //   time: true,
+  // });
+});
+
+const height = window.outerHeight;
+console.log(height);
+console.log(window.screen.availHeight);

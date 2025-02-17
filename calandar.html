@@ -4,8 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calendar</title>
-    <!-- <link rel="stylesheet" href="src/css/Home_St.css" /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="src/css/base.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/styles/index.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/index.js"
+      defer
+    ></script>
     <link rel="stylesheet" href="src/css/calendar.css" />
   </head>
 
@@ -48,48 +62,243 @@
           </li>
         </ul>
       </div>
-
       <!-- Main Content -->
       <div class="main-content">
-        <section id="calendar" class="calendar"></section>
         <div class="event-modal modal-hidden">
-          <h2 class="event-modal-title">Create Event</h2>
-          <div class="group-input">
-            <label class="event-date-label" for="event-title"
-              >Event title</label
-            >
-            <input type="text" id="event-title" placeholder="Event title" />
-          </div>
-          <div class="date-container">
-            <div class="group-input">
-              <label class="event-date-label" for="event-date"
-                >start date</label
-              >
-              <input type="date" id="event-start-date" />
+          <h2 class="event-modal-heading">Create Event</h2>
+          <p class="modal__title">
+            Every moment of learning is a step towards success .
+          </p>
+          <div class="modal__event-container">
+            <div class="modal__left">
+              <div class="group-input">
+                <label class="event-date-label" for="event-title"
+                  >Event title</label
+                >
+                <input
+                  class="modal__input event-title-input"
+                  type="text"
+                  id="event-title"
+                />
+              </div>
+              <div class="date-container">
+                <div class="group-input">
+                  <label class="event-date-label" for="event-date"
+                    >start date</label
+                  >
+                  <input
+                    class="modal__input"
+                    type="date"
+                    id="event-start-date"
+                  />
+                </div>
+                <div class="group-input">
+                  <label class="event-date-label" for="event-date"
+                    >end date</label
+                  >
+                  <input
+                    class="modal__input"
+                    type="date"
+                    id="event-end-date"
+                    min="2025-02-14"
+                  />
+                </div>
+              </div>
+              <div class="description">
+                <label class="event-date-label" for="event-description"
+                  >Description</label
+                >
+                <textarea
+                  class="event-description"
+                  name="eventDescription"
+                  id="event-description"
+                  cols="40"
+                  rows="4"
+                  placeholder="Type Something Of You Want"
+                ></textarea>
+              </div>
+              <button id="save-event">Save</button>
             </div>
-            <div class="group-input">
-              <label class="event-date-label" for="event-date">end date</label>
-              <input type="date" id="event-end-date" min="2025-02-14" />
+            <div class="modal__right">
+              <img
+                class="modal__img"
+                src="src/images/welcome.png"
+                alt="event img"
+              />
+              <ul class="modal__list">
+                <li class="modal__list-item">
+                  With every event, we write a new chapter in our learning
+                  journey .
+                </li>
+                <li class="modal__list-item">
+                  learn, engage, and achive your dreams with us
+                </li>
+                <li class="modal__list-item">
+                  Let's explore the world of knowledge, step by step.
+                </li>
+              </ul>
+            </div>
+            <div class="btn-close-modal">&times;</div>
+          </div>
+        </div>
+        <div class="left__side">
+          <header class="header">
+            <div class="welcome__message">
+              <div class="welcome__user">
+                Hi, Yara
+                <img
+                  class="welcome__icon"
+                  src="src/images/hand-wave.svg"
+                  alt="hand wave icon"
+                />
+              </div>
+              <p class="sub__message">Here is your homework, do it on me.</p>
+            </div>
+            <button class="add__event-btn">Add Event</button>
+          </header>
+          <div class="week__calendar">
+            <div class="week__calendar-day-box">
+              <div class="week__calendar-day Week__calendar-day--bg-1">
+                Sun <span class="day__number">11</span>
+              </div>
+              <div class="lecture__event">
+                SAD <span class="lecture__number">lec 6</span>
+              </div>
+              <i class="fa-solid fa-arrow-right event__arrow"></i>
+            </div>
+            <div class="week__calendar-day-box">
+              <div class="week__calendar-day Week__calendar-day--bg-2">
+                Mon <span class="day__number">12</span>
+              </div>
+              <div class="lecture__event">
+                Programming <span class="lecture__number">lec 1</span>
+              </div>
+              <i class="fa-solid fa-arrow-right event__arrow"></i>
+            </div>
+            <div class="week__calendar-day-box">
+              <div class="week__calendar-day Week__calendar-day--bg-3">
+                Tue <span class="day__number">13</span>
+              </div>
+              <div class="lecture__event">
+                Database <span class="lecture__number">lec 3</span>
+              </div>
+              <i class="fa-solid fa-arrow-right event__arrow"></i>
+            </div>
+            <div class="week__calendar-day-box">
+              <div class="week__calendar-day Week__calendar-day--bg-4">
+                Wen <span class="day__number">14</span>
+              </div>
+              <div class="lecture__event">
+                Statistics <span class="lecture__number">lec 6</span>
+              </div>
+              <i class="fa-solid fa-arrow-right event__arrow"></i>
+            </div>
+            <div class="week__calendar-day-box">
+              <div class="week__calendar-day Week__calendar-day--bg-5">
+                Sun <span class="day__number">11</span>
+              </div>
+              <div class="lecture__event">
+                Programming 2 <span class="lecture__number">lec 6</span>
+              </div>
+              <i class="fa-solid fa-arrow-right event__arrow"></i>
+            </div>
+            <div class="week__calendar-day-box">
+              <div class="week__calendar-day Week__calendar-day--bg-6">
+                Sun <span class="day__number">11</span>
+              </div>
+              <div class="lecture__event">
+                MOT <span class="lecture__number">lec 6</span>
+              </div>
+              <i class="fa-solid fa-arrow-right event__arrow"></i>
             </div>
           </div>
-          <div class="description">
-            <label class="event-date-label" for="event-description"
-              >Description</label
-            >
-            <textarea
-              class="event-description"
-              name="eventDescription"
-              id="event-description"
-              cols="100"
-            ></textarea>
+          <!-- <div class="day__calendar">Day</div> -->
+        </div>
+        <div class="middle__side">
+          <div class="day__event course-one__event">
+            <div class="event__time__left">28 min</div>
+            <div class="event__type">Assignment</div>
           </div>
-          <button id="save-event">Save</button>
-          <div class="btn-close-modal">&times;</div>
+          <div class="line-sprator-top"></div>
+          <div class="day__event course-two__event">
+            <div class="event__time__left">27 min</div>
+            <div class="event__type">Quiz</div>
+          </div>
+          <div class="line-sprator-top"></div>
+          <div class="day__event course-three__event">
+            <div class="event__time__left">2 hour</div>
+            <div class="event__type">Project negotiation</div>
+          </div>
+          <div class="line-sprator-top"></div>
+          <div class="day__event course-four__event">
+            <div class="event__time__left">2 hour</div>
+            <div class="event__type">Project negotiation</div>
+          </div>
+          <div class="line-sprator-top"></div>
+          <div class="day__event course-five__event">
+            <div class="event__time__left">2 hour</div>
+            <div class="event__type">Project negotiation</div>
+          </div>
+          <div class="line-sprator-top"></div>
+          <div class="day__event course-one__event">
+            <div class="event__time__left">2 hour</div>
+            <div class="event__type">Project negotiation</div>
+          </div>
+          <div class="line-sprator-top"></div>
+
+          <div class="day__event course-six__event">
+            <div class="event__time__left">2 hour</div>
+            <div class="event__type">Project negotiation</div>
+          </div>
+          <div class="line-sprator-top"></div>
+        </div>
+        <div class="right__side">
+          <div id="calendar" class="calendar full-calendar"></div>
+          <div id="daily__calendar" class="daily__calendar">
+            <div class="today">
+              Tuesday,<span class="day__in-month"> 10Feb</span>
+            </div>
+            <div class="daily__schedule">
+              <div class="time">
+                <div class="hour">10 am</div>
+                <div class="hour">12 am</div>
+                <div class="hour">02 pm</div>
+                <div class="hour">04 pm</div>
+                <div class="hour">06 pm</div>
+                <div class="hour">08 pm</div>
+                <div class="hour">10 pm</div>
+                <div class="hour">12 pm</div>
+              </div>
+              <div class="daily__event-container">
+                <div class="daily__event daily__event-1">
+                  <p class="daily__event-time">10:00 am</p>
+                  <p class="daily__event-title">Quiz</p>
+                  <p class="daliy__event-description">
+                    Programming Lorem ipsum dolor sit amet.ipsum dolor sit
+                    amet.ipsum dolor sit amet.ipsum dolor sit amet.
+                  </p>
+                </div>
+                <div class="daily__event daily__event-2">
+                  <p class="daily__event-time">11:00 am</p>
+                  <p class="daily__event-title">Assignment</p>
+                  <p class="daliy__event-description">
+                    System Analysis & Design Lorem ipsum dolor sit amet.
+                  </p>
+                </div>
+                <div class="daily__event daily__event-3">
+                  <p class="daily__event-time">02:00 pm</p>
+                  <p class="daily__event-title">negotiation</p>
+                  <p class="daliy__event-description">
+                    Management of Technology Lorem ipsum dolor sit amet.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     <div class="overlay"></div>
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
     <script src="src/js/calendar.js"></script>
   </body>
 </html>

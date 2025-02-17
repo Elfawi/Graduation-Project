@@ -8,8 +8,9 @@
   --color-primary-dark: #4d49a1;
   --color-primary-light: #5a47ff;
   --color-grey-light-1: #f7f7f7;
-  --color-grey-light-2: #eae9e9;
-  --color-grey-light-3: #dddddd;
+  --color-grey-light-2: #eeeefb;
+  --color-grey-light-3: #eae9e9;
+  --color-grey-light-4: #dddddd;
   --color-grey-dark-1: #333;
   --color-grey-dark-2: #707070;
   --color-grey-dark-3: #a0a0a8;
@@ -21,7 +22,7 @@
   --course-color-text-3: #63d8e2;
   --course-color-4: #dff7e3;
   --course-color-text-4: rgb(117, 161, 117);
-  --course-color-5: #f8eed2;
+  --course-color-5: #ffebc7;
   --course-color-text-5: #ebc353;
   /* --course-color-6: #fdffaa; */
   --fs-1: 4.2rem;

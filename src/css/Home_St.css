@@ -126,41 +126,41 @@
 }
 .box:hover > .box__time-container .imgCard {
   /* transform: scale(1.3); */
-  animation: shake infinite 2s;
+  animation: ring infinite 1s;
 }
-@keyframes shake {
+@keyframes ring {
   0% {
-    transform: translate(1px, 1px) rotate(0deg);
+    transform: rotate(0deg);
   }
   10% {
-    transform: translate(-1px, -2px) rotate(-1deg);
+    transform: rotate(10deg);
   }
   20% {
-    transform: translate(-2px, 0px) rotate(1deg);
+    transform: rotate(0deg);
   }
-  20% {
-    transform: translate(2px, 2px) rotate(0deg);
+  30% {
+    transform: rotate(10deg);
   }
   40% {
-    transform: translate(1px, -1px) rotate(1deg);
+    transform: rotate(0deg);
   }
   50% {
-    transform: translate(-1px, 2px) rotate(-1deg);
+    transform: rotate(10deg);
   }
   60% {
-    transform: translate(-2px, 1px) rotate(0deg);
+    transform: rotate(0deg);
   }
   70% {
-    transform: translate(2px, 1px) rotate(-1deg);
+    transform: rotate(10deg);
   }
   80% {
-    transform: translate(-1px, -1px) rotate(1deg);
+    transform: rotate(0deg);
   }
   90% {
-    transform: translate(1px, 2px) rotate(0deg);
+    transform: rotate(10deg);
   }
   100% {
-    transform: translate(1px, -2px) rotate(-1deg);
+    transform: rotate(0deg);
   }
 }
 .exam-countdown {

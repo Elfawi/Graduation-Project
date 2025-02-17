@@ -81,6 +81,10 @@
   box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.1);
   position: relative;
   height: 100%;
+  transition: all 0.3s;
+}
+.course:hover {
+  filter: invert(1) saturate(1.2);
 }
 .course-1 {
   color: var(--course-color-text-1);
@@ -101,12 +105,12 @@
   background-color: var(--course-color-4);
 }
 .course-5 {
-  color: var(--course-color-text-1);
-  background-color: var(--course-color-1);
-}
-.course-6 {
   color: var(--course-color-text-5);
   background-color: var(--course-color-5);
+}
+.course-6 {
+  color: var(--course-color-text-6);
+  background-color: var(--course-color-6);
 }
 .course__lecture {
   /* color: var(--course-color-5); */

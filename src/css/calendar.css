@@ -56,22 +56,22 @@
   color: var(--color-grey-dark-2);
 }
 .Week__calendar-day--bg-1 {
-  background-color: var(--course-color-4);
+  background-color: var(--course-color-1);
 }
 .Week__calendar-day--bg-2 {
   background-color: var(--course-color-2);
 }
 .Week__calendar-day--bg-3 {
-  background-color: var(--course-color-1);
+  background-color: var(--course-color-3);
 }
 .Week__calendar-day--bg-4 {
-  background-color: var(--course-color-2);
-}
-.Week__calendar-day--bg-5 {
   background-color: var(--course-color-4);
 }
-.Week__calendar-day--bg-6 {
+.Week__calendar-day--bg-5 {
   background-color: var(--course-color-5);
+}
+.Week__calendar-day--bg-6 {
+  background-color: var(--course-color-6);
 }
 .week__calendar-day {
   display: flex;
@@ -139,26 +139,26 @@
   background-color: var(--color-grey-light-3);
 }
 .course-one__event {
-  background-color: var(--course-color-4);
+  background-color: var(--course-color-1);
   justify-self: flex-start;
 }
 .course-two__event {
   background-color: var(--course-color-2);
 }
 .course-three__event {
-  background-color: var(--course-color-1);
+  background-color: var(--course-color-3);
   justify-self: flex-end;
 }
 .course-four__event {
-  background-color: var(--course-color-2);
+  background-color: var(--course-color-4);
   justify-self: flex-start;
 }
 .course-five__event {
-  background-color: var(--course-color-1);
+  background-color: var(--course-color-5);
   justify-self: flex-end;
 }
 .course-six__event {
-  background-color: var(--course-color-5);
+  background-color: var(--course-color-6);
 }
 
 /*///////////////////////RIGHT SIDE////////////////////////////*/
@@ -390,7 +390,7 @@ textarea {
   border: none;
   resize: none;
   padding: 2rem;
-  border-radius: 5rem;
+  border-radius: 4rem;
   font-family: inherit;
 }
 .event-date-label {

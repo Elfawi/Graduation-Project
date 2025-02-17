@@ -24,7 +24,9 @@
   --course-color-text-4: rgb(117, 161, 117);
   --course-color-5: #ffebc7;
   --course-color-text-5: #ebc353;
-  /* --course-color-6: #fdffaa; */
+  --course-color-6: #fdffaa;
+  --course-color-text-6: #cbcd4c;
+
   --fs-1: 4.2rem;
   --fs-2: 3.4rem;
   --fs-3: 2.8rem;

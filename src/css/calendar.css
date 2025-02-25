@@ -16,6 +16,7 @@
   background-color: white;
   /* position: relative; */
 }
+
 /*///////////////////////LEFT SIDE////////////////////////////*/
 .left__side {
   width: 30%;
@@ -257,6 +258,9 @@
     0 -0.2rem 1.6rem rgba(0, 0, 0, 0.1);
   margin-bottom: 1rem;
 }
+[data-vc="calendar"] {
+  min-width: auto;
+}
 .vc-date__btn {
   font-size: var(--fs-5);
 }
@@ -470,4 +474,51 @@ textarea {
 }
 .add__event-btn:hover {
   background-color: var(--color-primary-dark);
+}
+@media screen and (max-width: 62.5em) {
+  .main-content {
+    display: block;
+    /* flex-direction: column; */
+  }
+  .left__side {
+    display: inline-block;
+    width: 45%;
+    margin-right: 2rem;
+  }
+  .week__calendar {
+    gap: 4rem;
+  }
+  .event__arrow {
+    margin-left: 2rem;
+  }
+  .middle__side {
+    width: 50%;
+    margin-top: 0;
+    display: inline-flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem;
+  }
+  .right__side {
+    flex-direction: row;
+    width: 100%;
+    margin-top: 2rem;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  #calendar {
+    width: 100%;
+    height: auto;
+  }
+  .daily__calendar {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 0;
+    max-width: 100%;
+    /* width: 100%; */
+  }
 }

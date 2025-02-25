@@ -400,9 +400,6 @@
   color: var(--color-primary-dark);
 }
 @media screen and (max-width: 87.5em) {
-  html {
-    font-size: 55%;
-  }
   .today-schedule {
     margin-top: 2rem;
   }

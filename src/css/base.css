@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 :root {
+  /* Colors */
   --color-primary: #5955b3;
   --color-primary-dark: #4d49a1;
   --color-primary-light: #5a47ff;
@@ -26,7 +27,7 @@
   --course-color-text-5: #ebc353;
   --course-color-6: #fdffaa;
   --course-color-text-6: #cbcd4c;
-
+  /* Typography */
   --fs-1: 4.2rem;
   --fs-2: 3.4rem;
   --fs-3: 2.8rem;
@@ -34,6 +35,12 @@
   --fs-5: 1.8rem;
   --fs-6: 1.6rem;
   --fs-7: 1.4rem;
+  /* Breakpoints */
+  --bp-xxlarge: 112.5em; /* 1800px */
+  --bp-xlarge: 87.5em; /* 1500px */
+  --bp-large: 75em; /* 1200px */
+  --bp-medium: 56.25em; /* 900px */
+  --bp-small: 37.5em; /* 600px */
 }
 ::selection {
   background-color: var(--color-primary);

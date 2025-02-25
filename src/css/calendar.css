@@ -475,7 +475,7 @@ textarea {
 .add__event-btn:hover {
   background-color: var(--color-primary-dark);
 }
-@media screen and (max-width: 62.5em) {
+@media screen and (max-width: 56.25em) {
   .main-content {
     display: block;
     /* flex-direction: column; */

@@ -15,26 +15,27 @@
   --color-grey-dark-1: #333;
   --color-grey-dark-2: #707070;
   --color-grey-dark-3: #a0a0a8;
-  --course-color-1: #e3dbf4;
-  --course-color-text-1: #7159a2;
-  --course-color-2: #fae3d4;
-  --course-color-text-2: #e0a855;
-  --course-color-3: #bbeff4;
-  --course-color-text-3: #63d8e2;
-  --course-color-4: #dff7e3;
-  --course-color-text-4: rgb(117, 161, 117);
-  --course-color-5: #ffebc7;
-  --course-color-text-5: #ebc353;
-  --course-color-6: #fdffaa;
-  --course-color-text-6: #cbcd4c;
+  --day-color-1: #e3dbf4;
+  --day-color-text-1: #7159a2;
+  --day-color-2: #fae3d4;
+  --day-color-text-2: #e0a855;
+  --day-color-3: #bbeff4;
+  --day-color-text-3: #63d8e2;
+  --day-color-4: #dff7e3;
+  --day-color-text-4: rgb(117, 161, 117);
+  --day-color-5: #ffebc7;
+  --day-color-text-5: #ebc353;
+  --day-color-6: #fdffaa;
+  --day-color-text-6: #cbcd4c;
   /* Typography */
-  --fs-1: 4.2rem;
-  --fs-2: 3.4rem;
-  --fs-3: 2.8rem;
-  --fs-4: 2rem;
-  --fs-5: 1.8rem;
-  --fs-6: 1.6rem;
-  --fs-7: 1.4rem;
+  --fs-1: 4.2rem; /* 42px */
+  --fs-2: 3.4rem; /* 34px */
+  --fs-3: 2.8rem; /* 28px */
+  --fs-4: 2rem; /* 20px */
+  --fs-5: 1.8rem; /* 18px */
+  --fs-6: 1.6rem; /* 16px */
+  --fs-7: 1.4rem; /* 14px */
+  --fs-8: 1.2rem; /* 12px */
   /* Breakpoints */
   --bp-xxlarge: 112.5em; /* 1800px */
   --bp-xlarge: 87.5em; /* 1500px */
@@ -54,14 +55,14 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: var(--color-primary);
   color: var(--color-grey-dark-1);
-  padding-top: 2rem;
   font-size: 1.6rem;
-  padding-bottom: 2rem;
 }
 
 .container {
   background-color: var(--color-primary);
   display: flex;
+  padding: 1rem 0;
+  height: 100vh;
 }
 /* Sidebar */
 .sidebar {
@@ -74,13 +75,20 @@ body {
   font-size: 2.5rem;
   text-align: center;
 }
+.sidebar__list {
+  position: sticky;
+  top: 10rem;
+}
 
 .sidebar h2 {
   margin-bottom: 5rem;
   font-size: 3.5rem;
   font-style: italic;
 }
-
+.logo {
+  position: sticky;
+  top: 2rem;
+}
 .img-logo {
   width: 3.5rem;
   margin-bottom: -0.7rem;

@@ -6,12 +6,8 @@
   border-radius: 5rem;
   margin-right: 2rem;
   box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  /* display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  align-items: center; */
+  overflow: scroll;
+  scrollbar-width: none;
 }
 /*========================================================*/
 .tip {
@@ -87,30 +83,30 @@
   filter: invert(1) saturate(1.2);
 }
 .course-1 {
-  color: var(--course-color-text-1);
-  background-color: var(--course-color-1);
+  color: var(--day-color-text-1);
+  background-color: var(--day-color-1);
 }
 .course-2 {
-  color: var(--course-color-text-2);
+  color: var(--day-color-text-2);
 
-  background-color: var(--course-color-2);
+  background-color: var(--day-color-2);
 }
 .course-3 {
-  color: var(--course-color-text-3);
-  background-color: var(--course-color-3);
+  color: var(--day-color-text-3);
+  background-color: var(--day-color-3);
 }
 .course-4 {
-  color: var(--course-color-text-4);
+  color: var(--day-color-text-4);
 
-  background-color: var(--course-color-4);
+  background-color: var(--day-color-4);
 }
 .course-5 {
-  color: var(--course-color-text-5);
-  background-color: var(--course-color-5);
+  color: var(--day-color-text-5);
+  background-color: var(--day-color-5);
 }
 .course-6 {
-  color: var(--course-color-text-6);
-  background-color: var(--course-color-6);
+  color: var(--day-color-text-6);
+  background-color: var(--day-color-6);
 }
 .course__lecture {
   /* color: var(--course-color-5); */
@@ -134,7 +130,7 @@
 .course__proffesor__name {
   font-size: var(--fs-7);
   /* font-weight: 100; */
-  color: var(--color-grey-dark-3);
+  color: var(--color-grey-dark-2);
   padding-bottom: 2rem;
 }
 .course__icon-box {

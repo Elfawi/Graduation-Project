@@ -30,7 +30,7 @@
         <div class="logo">
           <h2><img src="src/images/logo.png" class="img-logo" />EDU</h2>
         </div>
-        <ul>
+        <ul class="sidebar__list">
           <li id="home" class="Sli homeli">
             <a href="home.html">Home</a>
           </li>
@@ -87,8 +87,9 @@
                     >start date</label
                   >
                   <input
-                    class="modal__input"
-                    type="date"
+                    class="modal__input start-end-input"
+                    type="text"
+                    placeholder="dd/mm/yyyy"
                     id="event-start-date"
                   />
                 </div>
@@ -97,13 +98,16 @@
                     >end date</label
                   >
                   <input
-                    class="modal__input"
-                    type="date"
+                    class="modal__input start-end-input"
+                    type="text"
+                    placeholder="dd/mm/yyyy"
                     id="event-end-date"
                     min="2025-02-14"
                   />
                 </div>
+                <div id="add-event-calendar"></div>
               </div>
+
               <div class="description">
                 <label class="event-date-label" for="event-description"
                   >Description</label
@@ -215,38 +219,38 @@
           <!-- <div class="day__calendar">Day</div> -->
         </div>
         <div class="middle__side">
-          <div class="day__event course-one__event">
+          <div class="day__event day-1__event">
             <div class="event__time__left">28 min</div>
             <div class="event__type">Assignment</div>
           </div>
           <div class="line-sprator-top"></div>
-          <div class="day__event course-two__event">
+          <div class="day__event day-2__event">
             <div class="event__time__left">27 min</div>
             <div class="event__type">Quiz</div>
           </div>
           <div class="line-sprator-top"></div>
-          <div class="day__event course-three__event">
+          <div class="day__event day-3__event">
             <div class="event__time__left">2 hour</div>
             <div class="event__type">Project negotiation</div>
           </div>
           <div class="line-sprator-top"></div>
-          <div class="day__event course-four__event">
+          <div class="day__event day-4__event">
             <div class="event__time__left">2 hour</div>
             <div class="event__type">Project negotiation</div>
           </div>
           <div class="line-sprator-top"></div>
-          <div class="day__event course-five__event">
+          <div class="day__event day-5__event">
             <div class="event__time__left">2 hour</div>
             <div class="event__type">Project negotiation</div>
           </div>
           <div class="line-sprator-top"></div>
-          <div class="day__event course-one__event">
+          <div class="day__event day-1__event">
             <div class="event__time__left">2 hour</div>
             <div class="event__type">Project negotiation</div>
           </div>
           <div class="line-sprator-top"></div>
 
-          <div class="day__event course-six__event">
+          <div class="day__event day-6__event">
             <div class="event__time__left">2 hour</div>
             <div class="event__type">Project negotiation</div>
           </div>

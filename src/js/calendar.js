@@ -57,13 +57,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const optionsFull = {
     dateToday: "today",
     selectedTheme: "light",
-    selectedMonth: 2,
-    selectedYear: 2025,
+    // selectionDatesMode: "multiple",
+    // selectedMonth: 2,
+    // selectedYear: 2025,
     onClickDate(self, event) {
       console.log(event);
+
       console.log(self.context.selectedDates);
     },
-    selectionDatesMode: "multiple",
+    // selectionDatesMode: "multiple",
   };
   const calendarfull = new Calendar("#calendar", optionsFull);
 
@@ -73,8 +75,37 @@ document.addEventListener("DOMContentLoaded", () => {
   //   holidays: false,
   //   time: true,
   // });
+  ////////////////////////// Add Event Calander ///////////////////////
+
+  const addEventoptions = {
+    selectedTheme: "light",
+    // calendar: "add-event-calendar",
+    selectionDatesMode: "multiple",
+    type: "multiple",
+    displayMonthsCount: 2,
+    monthsToSwitch: 2,
+    displayDatesOutside: false,
+    disableDatesPast: true,
+    enableEdgeDatesOnly: true,
+    selectionDatesMode: "multiple-ranged",
+    selectionTimeMode: 12,
+  };
+
+  const addEventcalendar = new Calendar("#add-event-calendar", addEventoptions);
+  addEventcalendar.init();
+  addEventcalendar.hide();
+  document.querySelectorAll(".start-end-input").forEach((input) => {
+    input.addEventListener("click", () => {
+      addEventcalendar.show();
+      console.log("ok");
+    });
+  });
+  eventModal.addEventListener("click", (e) => {
+    if (e.target.closest(".start-end-input")) return;
+    addEventcalendar.hide();
+  });
 });
 
-const height = window.outerHeight;
-console.log(height);
-console.log(window.screen.availHeight);
+// const height = window.outerHeight;
+// console.log(height);
+// console.log(window.screen.availHeight);

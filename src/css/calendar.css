@@ -317,12 +317,10 @@
 /*============================ MODEL ==*/
 /*=====================================================*/
 .modal-hidden {
-  opacity: 0;
-  transform: translateY(-120%);
+  display: none;
 }
 .modal-show {
-  opacity: 1;
-  transform: translateY(0);
+  display: block;
 }
 .event-modal {
   width: 90%;
@@ -339,6 +337,7 @@
     0 -0.8rem 1.6rem rgba(0, 0, 0, 0.2);
   z-index: 999;
   transition: all 0.5s ease;
+  animation: fade 0.5s ease-in-out backwards;
 }
 .event-modal-heading {
   /* font-size: 3.2rem; */
@@ -545,9 +544,11 @@ textarea {
 @keyframes fade {
   0% {
     opacity: 0;
+    transform: scale(0.5);
   }
   100% {
     opacity: 1;
+    transform: scale(1);
   }
 }
 

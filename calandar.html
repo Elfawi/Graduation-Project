@@ -257,10 +257,52 @@
           <div class="line-sprator-top"></div>
         </div>
         <div class="right__side">
-          <div id="calendar" class="calendar full-calendar"></div>
+          <!-- <div id="calendar" class="calendar full-calendar"></div> -->
+          <div class="calendar">
+            <header class="calendar__header">
+              <button class="calendar__nav-button" id="prevMonth">&lt;</button>
+              <div class="calendar__month-display" id="monthDisplay">
+                March 2025
+              </div>
+              <button class="calendar__nav-button" id="nextMonth">&gt;</button>
+            </header>
+
+            <div class="calendar__weekdays">
+              <div class="calendar__weekday calendar__weekday--weekday">
+                Mon
+              </div>
+              <div class="calendar__weekday calendar__weekday--weekday">
+                Tue
+              </div>
+              <div class="calendar__weekday calendar__weekday--weekday">
+                Wed
+              </div>
+              <div class="calendar__weekday calendar__weekday--weekday">
+                Thu
+              </div>
+              <div class="calendar__weekday calendar__weekday--weekend">
+                Fri
+              </div>
+              <div class="calendar__weekday calendar__weekday--weekend">
+                Sat
+              </div>
+              <div class="calendar__weekday calendar__weekday--weekday">
+                Sun
+              </div>
+            </div>
+
+            <div class="calendar__days-container" id="daysContainer">
+              <div class="calendar__days-grid" id="daysGrid"></div>
+            </div>
+          </div>
+
           <div id="daily__calendar" class="daily__calendar">
             <div class="today">
-              Tuesday,<span class="day__in-month"> 10Feb</span>
+              <span class="today__weak">Tuesday</span>,<span
+                class="today__in-month"
+              >
+                10Feb</span
+              >
             </div>
             <div class="daily__schedule">
               <div class="time">

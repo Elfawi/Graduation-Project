@@ -24,8 +24,10 @@ const eventModal = document.querySelector(".event-modal");
 const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".btn-close-modal");
 overlay.style.height = document.body.clientHeight + "px";
-btnCloseModal.addEventListener("click", hideEventModal);
-addEventButton.addEventListener("click", showEventModal);
+if (eventModal) {
+  btnCloseModal.addEventListener("click", hideEventModal);
+  addEventButton.addEventListener("click", showEventModal);
+}
 function showEventModal() {
   eventModal.classList.remove("modal-hidden");
   eventModal.classList.add("modal-show");
@@ -50,61 +52,61 @@ document.addEventListener("click", function (e) {
   }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Destructure the Calendar constructor
-  const { Calendar } = window.VanillaCalendarPro;
-  // Create a calendar instance and initialize it.
-  // const optionsFull = {
-  //   dateToday: "today",
-  //   selectedTheme: "light",
-  //   // selectionDatesMode: "multiple",
-  //   // selectedMonth: 2,
-  //   // selectedYear: 2025,
-  //   onClickDate(self, event) {
-  //     console.log(event);
+// document.addEventListener("DOMContentLoaded", () => {
+//   // Destructure the Calendar constructor
+//   const { Calendar } = window.VanillaCalendarPro;
+//   // Create a calendar instance and initialize it.
+//   // const optionsFull = {
+//   //   dateToday: "today",
+//   //   selectedTheme: "light",
+//   //   // selectionDatesMode: "multiple",
+//   //   // selectedMonth: 2,
+//   //   // selectedYear: 2025,
+//   //   onClickDate(self, event) {
+//   //     console.log(event);
 
-  //     console.log(self.context.selectedDates);
-  //   },
-  //   // selectionDatesMode: "multiple",
-  // };
-  // const calendarfull = new Calendar("#calendar", optionsFull);
+//   //     console.log(self.context.selectedDates);
+//   //   },
+//   //   // selectionDatesMode: "multiple",
+//   // };
+//   // const calendarfull = new Calendar("#calendar", optionsFull);
 
-  // calendarfull.init();
-  // calendarfull.update({
-  //   dates: true,
-  //   holidays: false,
-  //   time: true,
-  // });
-  ////////////////////////// Add Event Calander ///////////////////////
+//   // calendarfull.init();
+//   // calendarfull.update({
+//   //   dates: true,
+//   //   holidays: false,
+//   //   time: true,
+//   // });
+//   ////////////////////////// Add Event Calander ///////////////////////
 
-  const addEventoptions = {
-    selectedTheme: "light",
-    // calendar: "add-event-calendar",
-    selectionDatesMode: "multiple",
-    type: "multiple",
-    displayMonthsCount: 2,
-    monthsToSwitch: 2,
-    displayDatesOutside: false,
-    disableDatesPast: true,
-    enableEdgeDatesOnly: true,
-    selectionDatesMode: "multiple-ranged",
-    selectionTimeMode: 12,
-  };
+//   const addEventoptions = {
+//     selectedTheme: "light",
+//     // calendar: "add-event-calendar",
+//     selectionDatesMode: "multiple",
+//     type: "multiple",
+//     displayMonthsCount: 2,
+//     monthsToSwitch: 2,
+//     displayDatesOutside: false,
+//     disableDatesPast: true,
+//     enableEdgeDatesOnly: true,
+//     selectionDatesMode: "multiple-ranged",
+//     selectionTimeMode: 12,
+//   };
 
-  const addEventcalendar = new Calendar("#add-event-calendar", addEventoptions);
-  addEventcalendar.init();
-  addEventcalendar.hide();
-  document.querySelectorAll(".start-end-input").forEach((input) => {
-    input.addEventListener("click", () => {
-      addEventcalendar.show();
-      console.log("ok");
-    });
-  });
-  eventModal.addEventListener("click", (e) => {
-    if (e.target.closest(".start-end-input")) return;
-    addEventcalendar.hide();
-  });
-});
+//   const addEventcalendar = new Calendar("#add-event-calendar", addEventoptions);
+//   addEventcalendar.init();
+//   addEventcalendar.hide();
+//   document.querySelectorAll(".start-end-input").forEach((input) => {
+//     input.addEventListener("click", () => {
+//       addEventcalendar.show();
+//       console.log("ok");
+//     });
+//   });
+//   eventModal.addEventListener("click", (e) => {
+//     if (e.target.closest(".start-end-input")) return;
+//     addEventcalendar.hide();
+//   });
+// });
 
 // const height = window.outerHeight;
 // console.log(height);

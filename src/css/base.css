@@ -8,7 +8,7 @@
   --color-primary: #5955b3;
   --color-primary-dark: #4d49a1;
   --color-primary-light: #5a47ff;
-  --color-grey-light-1: #f7f7f7;
+  --color-grey-light-1: #fafafa;
   --color-grey-light-2: #eeeefb;
   --color-grey-light-3: #eae9e9;
   --color-grey-light-4: #dddddd;
@@ -27,6 +27,9 @@
   --day-color-text-5: #ebc353;
   --day-color-6: #fdffaa;
   --day-color-text-6: #cbcd4c;
+  --day-color-7: #e8c07b;
+  --day-color-text-7: #daa74e;
+  --muted-text-1: #65558f;
   /* Typography */
   --fs-1: 4.2rem; /* 42px */
   --fs-2: 3.4rem; /* 34px */

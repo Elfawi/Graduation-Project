@@ -31,6 +31,7 @@ body {
   align-items: center;
   height: 100vh;
   font-size: 1.6rem;
+  overflow: hidden;
 }
 .authentcation-container {
   padding-top: 4rem;

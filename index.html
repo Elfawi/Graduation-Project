@@ -4,8 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign</title>
+    <link rel="icon" type="image/x-icon" href="/src/images/favicon.ico" />
     <link rel="stylesheet" href="src/css/form.css" />
   </head>
+
   <body>
     <main class="authentcation-container">
       <div class="container">
@@ -26,8 +28,6 @@
                 type="text"
                 id="id"
                 name="id"
-                minlength="14"
-                maxlength="14"
                 required
               /><br />
 
@@ -37,8 +37,8 @@
                 id="password"
                 name="password"
                 required
-                minlength="14"
-                maxlength="14"
+                minlength="8"
+                maxlength="8"
               /><br /><br />
 
               <button class="sign-in-btn" type="submit">Sign In</button>
@@ -72,8 +72,6 @@
                 class="signup-id"
                 name="signup-id"
                 required
-                minlength="14"
-                maxlength="14"
               /><br />
 
               <label class="form__label" for="signup-password">PASSWORD</label
@@ -83,8 +81,8 @@
                 id="signup-password"
                 name="signup-password"
                 required
-                minlength="14"
-                maxlength="14"
+                minlength="8"
+                maxlength="8"
               /><br />
 
               <label class="form__label" for="signup-repass">RE-PASSWORD</label
@@ -94,8 +92,8 @@
                 id="signup-repass"
                 name="signup-repass"
                 required
-                minlength="14"
-                maxlength="14"
+                minlength="8"
+                maxlength="8"
               /><br />
 
               <button class="sign-in-btn" type="submit">Sign Up</button><br />
@@ -104,13 +102,13 @@
         </div>
       </div>
     </main>
+
     <script>
       const signUpBtn = document.getElementById("signUp");
       const signInBtn = document.getElementById("signIn");
       const imageSection = document.querySelector(".image-section");
       const signupForm = document.querySelector(".sign-up-form");
       const signinForm = document.querySelector(".sign-in-form");
-
       // Switch between forms
       signUpBtn.addEventListener("click", function (event) {
         event.preventDefault();
@@ -126,31 +124,57 @@
         signinForm.classList.remove("hidden"); // Show the sign-in form
       });
 
-      // Validation function for exactly 14-digit ID and password
+      // Function to validate input
+      // This function checks if the password is at least 8 characters long
+      // and shows an alert if it's not.
       function validateInput(id, password) {
-        const idRegex = /^\d{14}$/; // Regular expression to check exactly 14 digits
-        if (!idRegex.test(id)) {
-          alert("ID must be exactly 14 digits.");
-          return false;
-        }
-        if (!idRegex.test(password)) {
-          alert("Password must be exactly 14 digits.");
+        if (password.length < 8) {
+          alert("Password must be at least 8 characters.");
           return false;
         }
         return true;
       }
 
-      // Handle sign-in form submission
       const signInForm = document.getElementById("signInForm");
-      signInForm.addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent form from submitting by default
-        const id = document.getElementById("id").value;
-        const password = document.getElementById("password").value;
+      const idInput = document.getElementById("id");
+      const passwordInput = document.getElementById("password");
 
-        // Validate the sign-in inputs
-        if (validateInput(id, password)) {
-          alert("Sign In successful!"); // You can replace this with actual logic (e.g., send to server)
-          signInForm.submit();
+      const BASE_URL =
+        "https://iuiwdjtmdeempcqxeuhf.supabase.co/rest/v1/student";
+      const API_KEY =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml1aXdkanRtZGVlbXBjcXhldWhmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ3NTY1MDcsImV4cCI6MjA2MDMzMjUwN30.XfSmnKA8wbsXIA1qkfYaRkzxtEdudIDNYbSJu-M5Zag"; // خليك حاطط الـ anon key بتاعك هنا
+
+      signInForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const studentId = idInput.value.trim();
+        const password = passwordInput.value.trim();
+
+        if (!validateInput(studentId, password)) return;
+
+        const pwdEncoded = encodeURIComponent(password);
+
+        const url = `${BASE_URL}?student_id=eq.${studentId}&student_password=eq.${pwdEncoded}`;
+
+        try {
+          const response = await fetch(url, {
+            headers: {
+              apikey: API_KEY,
+              Authorization: `Bearer ${API_KEY}`,
+            },
+          });
+
+          const data = await response.json();
+
+          if (data.length > 0) {
+            sessionStorage.setItem("studentId", studentId);
+            window.location.href = "home.html";
+          } else {
+            alert("Password or ID is incorrect.");
+          }
+        } catch (err) {
+          console.error("Error:", err);
+          alert("There was an error. Please try again.");
         }
       });
 
@@ -174,5 +198,7 @@
         alert("Sign Up successful!");
       });
     </script>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script type="module" src="src/js/app.js"></script>
   </body>
 </html>

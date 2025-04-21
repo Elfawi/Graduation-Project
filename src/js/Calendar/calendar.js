@@ -1,29 +1,11 @@
-// calendar.on("dateClick", function (info) {
-//   console.log("clicked on " + info.dateStr); // geting the clicked date
-//   console.log(info);
-//   // info.dayEl.querySelector(".fc-daygrid-day-events").textContent = "hello";
-// });
-////////////////////////// Calendar Events
-// calendar.addEvent(event[prompt("enter date")]);
-const event = {
-  events: [
-    {
-      id: "a",
-      title: "my event",
-      start: "2018-09-01",
-    },
-  ],
-  addEvent: function (event) {
-    this.events.push(event);
-  },
-};
-
+import { supaClient } from "../app.js";
+import { attachDayClickListeners } from "./dailyCalendar.js";
 const addEventButton = document.querySelector(".add__event-btn");
 const eventModal = document.querySelector(".event-modal");
 
-const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".btn-close-modal");
-overlay.style.height = document.body.clientHeight + "px";
+const overlay = document.querySelector(".overlay");
+// overlay.style.height = document.body.clientHeight + "px";
 if (eventModal) {
   btnCloseModal.addEventListener("click", hideEventModal);
   addEventButton.addEventListener("click", showEventModal);
@@ -40,77 +22,11 @@ function hideEventModal() {
   overlay.style.display = "none";
 }
 document.addEventListener("click", function (e) {
-  // console.log(
-  //   // e.target.closest(".event-modal").classList.contains("event-modal")
-  // );
-  // const modal = e.target
-  //   .closest(".event-modal")
-  //   .classList.contains("modal-show");
-  // console.log(modal);
   if (e.target.closest(".event-modal") !== eventModal && e.target === overlay) {
     hideEventModal();
   }
 });
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   // Destructure the Calendar constructor
-//   const { Calendar } = window.VanillaCalendarPro;
-//   // Create a calendar instance and initialize it.
-//   // const optionsFull = {
-//   //   dateToday: "today",
-//   //   selectedTheme: "light",
-//   //   // selectionDatesMode: "multiple",
-//   //   // selectedMonth: 2,
-//   //   // selectedYear: 2025,
-//   //   onClickDate(self, event) {
-//   //     console.log(event);
-
-//   //     console.log(self.context.selectedDates);
-//   //   },
-//   //   // selectionDatesMode: "multiple",
-//   // };
-//   // const calendarfull = new Calendar("#calendar", optionsFull);
-
-//   // calendarfull.init();
-//   // calendarfull.update({
-//   //   dates: true,
-//   //   holidays: false,
-//   //   time: true,
-//   // });
-//   ////////////////////////// Add Event Calander ///////////////////////
-
-//   const addEventoptions = {
-//     selectedTheme: "light",
-//     // calendar: "add-event-calendar",
-//     selectionDatesMode: "multiple",
-//     type: "multiple",
-//     displayMonthsCount: 2,
-//     monthsToSwitch: 2,
-//     displayDatesOutside: false,
-//     disableDatesPast: true,
-//     enableEdgeDatesOnly: true,
-//     selectionDatesMode: "multiple-ranged",
-//     selectionTimeMode: 12,
-//   };
-
-//   const addEventcalendar = new Calendar("#add-event-calendar", addEventoptions);
-//   addEventcalendar.init();
-//   addEventcalendar.hide();
-//   document.querySelectorAll(".start-end-input").forEach((input) => {
-//     input.addEventListener("click", () => {
-//       addEventcalendar.show();
-//       console.log("ok");
-//     });
-//   });
-//   eventModal.addEventListener("click", (e) => {
-//     if (e.target.closest(".start-end-input")) return;
-//     addEventcalendar.hide();
-//   });
-// });
-
-// const height = window.outerHeight;
-// console.log(height);
-// console.log(window.screen.availHeight);
 //////////////////////=================================================///////////////////////
 document.addEventListener("DOMContentLoaded", function () {
   const monthNames = [
@@ -190,6 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => {
       daysGrid.classList.remove("calendar__month-slide", "slide-in-left");
       daysContainer.removeChild(currentGrid);
+      attachDayClickListeners();
     }, 300);
     // Remove the selected day if user goes to the next month
     document.querySelectorAll(".calendar__day").forEach((day) => {
@@ -232,6 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => {
       daysGrid.classList.remove("calendar__month-slide", "slide-in-right");
       daysContainer.removeChild(currentGrid);
+      attachDayClickListeners();
     }, 300);
     // Remove the selected day if user goes to the next month
     selectedDay?.classList?.remove("calendar__day--selected");
@@ -299,13 +217,17 @@ document.addEventListener("DOMContentLoaded", function () {
         nextMonthYear
       );
     }
+    attachDayClickListeners();
   }
 
   function createDayElement(day, monthClass, month, year) {
     const dayElement = document.createElement("div");
 
     dayElement.textContent = day;
-    dayElement.dataset.month = currentMonth;
+    // dayElement.dataset.month = currentMonth;
+    dayElement.dataset.month = month;
+    dayElement.dataset.year = year;
+
     dayElement.classList.add("calendar__day");
     dayElement.classList.add(monthClass);
     // Get the day of week (0 is Sunday, 1 is Monday, etc.)
@@ -380,3 +302,6 @@ document.addEventListener("DOMContentLoaded", function () {
     daysGrid.appendChild(dayElement);
   }
 });
+
+////////////////////////  WEEKLY CALENDAR  /////////////////////////
+// Function to update the week calendar with current dates

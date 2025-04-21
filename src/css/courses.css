@@ -45,6 +45,7 @@
   margin-bottom: 4rem;
   overflow: hidden;
 }
+
 @media screen and (max-width: 56.25em) {
   .courses__container {
     grid-template-columns: 1fr;
@@ -364,5 +365,13 @@
   100% {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
+  }
+}
+@media screen and (max-width: 87.5em) {
+  .course__desription {
+    padding-bottom: 1rem;
+  }
+  .course__proffesor__name {
+    padding-bottom: 0rem;
   }
 }

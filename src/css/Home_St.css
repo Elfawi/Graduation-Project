@@ -450,48 +450,7 @@
   font-size: 1.4rem;
   color: var(--color-primary-dark);
 }
-@media screen and (max-width: 87.5em) {
-  .today-schedule {
-    margin-top: 2rem;
-  }
-  .Wdeadline .deadlineBoxes .box {
-    width: 18.5rem;
-    height: 15rem;
-  }
-  .Wdeadline .deadlineBoxes .box .upper {
-    font-size: 2.4rem;
-  }
-  .Wdeadline .deadlineBoxes .box .lower {
-    font-size: 2rem;
-  }
-}
-@media screen and (max-width: 75em) {
-  html {
-    font-size: 50%;
-  }
-  .Wdeadline .deadlineBoxes .box {
-    width: 15.5rem;
-  }
-}
-@media screen and (max-width: 60em) {
-  .deadlineBoxes {
-    flex-direction: column;
-    gap: 4rem;
-    padding-top: 4rem;
-  }
-  .Wdeadline .deadlineBoxes .box {
-    /* width: 15.5rem; */
-    width: 90%;
-    height: 100%;
-  }
-  .user-profile {
-    width: 100%;
-    flex: 2;
-    gap: 8rem;
-    /* justify-content: space-around; */
-    /* align-items: space-between; */
-  }
-}
+
 .Btn {
   display: flex;
   align-items: center;
@@ -555,4 +514,70 @@
   width: 70%;
   transition-duration: 0.3s;
   padding-right: 10px;
+}
+@media screen and (max-width: 87.5em) {
+  .courses-wrapper {
+    margin-top: 0;
+  }
+  .Wdeadline {
+    width: 100%;
+    padding: 1.5rem;
+  }
+  .deadlineBoxes {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .Wdeadline .deadlineBoxes .box .lower {
+    font-size: var(--fs-6);
+  }
+
+  .Wdeadline .deadlineBoxes .box {
+    width: 18rem;
+    height: 18rem;
+
+    box-shadow: 2px 1px 2.5rem 1px var(--color-primary);
+    transition: all 0.5s ease;
+  }
+  .calendar-container {
+    padding: 1rem;
+    margin: 0;
+  }
+  .user-profile {
+    padding: 6rem;
+  }
+  .today-schedule {
+    margin-top: 2rem;
+  }
+}
+@media screen and (max-width: 56.5em) {
+  .deadlineBoxes {
+    justify-content: unset;
+  }
+}
+@media screen and (max-width: 75em) {
+  html {
+    font-size: 50%;
+  }
+  .Wdeadline .deadlineBoxes .box {
+    width: 15.5rem;
+  }
+}
+@media screen and (max-width: 60em) {
+  .deadlineBoxes {
+    flex-direction: column;
+    gap: 4rem;
+    padding-top: 4rem;
+  }
+  .Wdeadline .deadlineBoxes .box {
+    /* width: 15.5rem; */
+    width: 90%;
+    height: 100%;
+  }
+  .user-profile {
+    width: 100%;
+    flex: 2;
+    gap: 8rem;
+    /* justify-content: space-around; */
+    /* align-items: space-between; */
+  }
 }

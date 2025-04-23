@@ -166,7 +166,11 @@ async function getCalendarEvents() {
 }
 
 async function renderWeeklyEvents(eventsArray) {
+  console.log("eventsArray", eventsArray);
   const events = await eventsArray;
+  events.sort(
+    (a, b) => new Date(b.event_startdatetime) - new Date(a.event_startdatetime)
+  );
   if (!events) {
     console.error("No events found for the week.");
     return;

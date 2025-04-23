@@ -42,7 +42,7 @@ addEventForm.addEventListener("submit", async (e) => {
       event_name: title,
       event_startdatetime: startDate,
       event_enddatetime: endDate,
-      event_type: null,
+      event_type: "student event",
       event_details: description,
       student_id: studentId,
     })

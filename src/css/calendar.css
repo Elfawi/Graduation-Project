@@ -243,7 +243,7 @@
 .time {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 4rem;
   min-width: 5rem;
   justify-content: space-between;
   margin-right: 1rem;
@@ -375,6 +375,7 @@ textarea {
   resize: none;
   padding: 2rem;
   border-radius: 4rem;
+  font-size: var(--fs-6);
   font-family: inherit;
 }
 .event-date-label {
@@ -864,6 +865,10 @@ textarea {
 /* Modal date picker enhancements */
 .start-end-input {
   cursor: pointer;
+  font-size: var(--fs-6);
+  position: relative;
+  color: var(--color-grey-dark-2);
+  font-family: inherit;
 }
 
 /* Animation classes for day selection */
@@ -955,3 +960,13 @@ textarea {
   transform: translate(-50%, -50%);
   color: var(--color-grey-dark-2);
 }
+/* .start-end-input::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 85%;
+  background-color: var(--color-grey-light-2);
+  z-index: 1;
+} */

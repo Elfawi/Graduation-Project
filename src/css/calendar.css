@@ -243,10 +243,11 @@
 .time {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
-  min-width: 5rem;
-  justify-content: space-between;
+  gap: 9rem;
+  min-width: max-content;
+  /* justify-content: space-evenly; */
   margin-right: 1rem;
+  font-size: var(--fs-7);
 }
 .hour {
   text-transform: uppercase;
@@ -970,3 +971,14 @@ textarea {
   background-color: var(--color-grey-light-2);
   z-index: 1;
 } */
+.student-event {
+  position: relative;
+  border-left: 5px solid var(--color-primary);
+  background-color: var(--color-grey-light-2);
+}
+.student-event::before {
+  content: "🧑‍🎓";
+  position: absolute;
+  left: 75%;
+  top: 10%;
+}

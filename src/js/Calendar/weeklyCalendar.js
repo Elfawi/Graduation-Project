@@ -183,7 +183,9 @@ async function renderWeeklyEvents(eventsArray) {
       // Sunday
       sundayRow.insertAdjacentHTML(
         "afterbegin",
-        `<div class="day__event day-${day + 2}__event">
+        `<div class="day__event day-${day + 2}__event ${
+          event.event_type === "student event" ? "student-event" : ""
+        }">
             <div class="event__time__left">${subtractDates(
               new Date(event.event_enddatetime),
               new Date(event.event_startdatetime)
@@ -198,7 +200,9 @@ async function renderWeeklyEvents(eventsArray) {
       // Monday
       mondayRow.insertAdjacentHTML(
         "afterbegin",
-        `<div class="day__event day-${day + 2}__event">
+        `<div class="day__event day-${day + 2}__event ${
+          event.event_type === "student event" ? "student-event" : ""
+        }">
             <div class="event__time__left">${subtractDates(
               new Date(event.event_enddatetime),
               new Date(event.event_startdatetime)
@@ -213,7 +217,9 @@ async function renderWeeklyEvents(eventsArray) {
       // Tuesday
       tuesdayRow.insertAdjacentHTML(
         "afterbegin",
-        `<div class="day__event day-${day + 2}__event">
+        `<div class="day__event day-${day + 2}__event ${
+          event.event_type === "student event" ? "student-event" : ""
+        }">
             <div class="event__time__left">${subtractDates(
               new Date(event.event_enddatetime),
               new Date(event.event_startdatetime)
@@ -228,7 +234,9 @@ async function renderWeeklyEvents(eventsArray) {
       // Wednesday
       wednesdayRow.insertAdjacentHTML(
         "afterbegin",
-        `<div class="day__event day-${day + 2}__event">
+        `<div class="day__event day-${day + 2}__event ${
+          event.event_type === "student event" ? "student-event" : ""
+        }">
             <div class="event__time__left">${subtractDates(
               new Date(event.event_enddatetime),
               new Date(event.event_startdatetime)
@@ -243,7 +251,9 @@ async function renderWeeklyEvents(eventsArray) {
       // Thursday
       thursdayRow.insertAdjacentHTML(
         "afterbegin",
-        `<div class="day__event day-${day + 2}__event">
+        `<div class="day__event day-${day + 2}__event ${
+          event.event_type === "student event" ? "student-event" : ""
+        }">
             <div class="event__time__left">${subtractDates(
               new Date(event.event_enddatetime),
               new Date(event.event_startdatetime)
@@ -258,7 +268,9 @@ async function renderWeeklyEvents(eventsArray) {
       // Friday
       fridayRow.insertAdjacentHTML(
         "afterbegin",
-        `<div class="day__event day-${day + 2}__event">
+        `<div class="day__event day-${day + 2}__event ${
+          event.event_type === "student event" ? "student-event" : ""
+        }">
             <div class="event__time__left">${subtractDates(
               new Date(event.event_enddatetime),
               new Date(event.event_startdatetime)
@@ -273,7 +285,9 @@ async function renderWeeklyEvents(eventsArray) {
       // Saturday
       saturdayRow.insertAdjacentHTML(
         "afterbegin",
-        `<div class="day__event day-${day - 5}__event">
+        `<div class="day__event day-${day - 5}__event ${
+          event.event_type === "student event" ? "student-event" : ""
+        }">
             <div class="event__time__left">${subtractDates(
               new Date(event.event_enddatetime),
               new Date(event.event_startdatetime)

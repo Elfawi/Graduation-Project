@@ -303,7 +303,9 @@ async function renderDailyEvents(eventsPromise) {
       const number = day === 6 ? day - 5 : day + 2;
 
       markup += `
-        <div class="daily__event daily__event-${number}" data-day=${day}>
+        <div class="daily__event daily__event-${number} ${
+        event.event_type === "student event" ? "student-event" : ""
+      }" data-day=${day}>
           <p class="daily__event-time">${formatTimeDisplay(
             event.event_startdatetime
           )}</p>

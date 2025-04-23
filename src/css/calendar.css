@@ -973,8 +973,8 @@ textarea {
 } */
 .student-event {
   position: relative;
-  border-left: 5px solid var(--color-primary);
-  background-color: var(--color-grey-light-2);
+  border-left: 5px solid var(--color-primary) !important;
+  background-color: var(--color-grey-light-2) !important;
 }
 .student-event::before {
   content: "🧑‍🎓";
